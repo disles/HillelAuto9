@@ -81,7 +81,7 @@ public class FileManager {
         System.out.println("crd - creates directory - ** NOT IMPLEMENTED YET **  \n");
 
         //DELETE
-        System.out.println("delf - deletes file - ** NOT IMPLEMENTED YET** ");
+        System.out.println("delf - deletes file");
         System.out.println("deld - deletes directory - ** NOT IMPLEMENTED YET**  \n");
 
         //RENAME
