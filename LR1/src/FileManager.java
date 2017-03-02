@@ -10,7 +10,6 @@ import java.util.Arrays;
 
 public class FileManager {
 
-
     public static void main(String[] args) {
         sysNotice();
         String[] allowedCommands = {"crf", "crd", "delf", "deld", "renf", "rend", "--help"};
@@ -20,7 +19,6 @@ public class FileManager {
         }
 
         else {
-
             if (args[0].contains("--help")){
                 getHelp();
             }
@@ -29,14 +27,19 @@ public class FileManager {
                     errorText();
                 }
                 else {
-
                     String filename = args[1];
                     createFile(filename);
-
-
                 }
             }
-
+            if (args[0].equalsIgnoreCase("delf")) {
+                if (args.length < 2) {
+                    errorText();
+                }
+                else {
+                    String filename = args[1];
+                    deleteFile(filename);
+                }
+            }
         }
     }
 
@@ -46,6 +49,16 @@ public class FileManager {
 
         String currentPath = getPath();
         System.out.println("File have been created: " + currentPath + "\\" + filename);
+        return true;
+
+    }
+
+    public static boolean deleteFile(String filename){
+        System.out.println("Deleting File: ");
+        System.out.println(filename);
+
+        String currentPath = getPath();
+        System.out.println("File have been deleted: " + currentPath + "\\" + filename);
         return true;
 
     }
