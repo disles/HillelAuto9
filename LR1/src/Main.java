@@ -8,10 +8,8 @@ import java.io.IOException;
  */
 public class Main {
     public static void main(String[] args) throws IOException {
-
         printMenu();
         performAction();
-
     }
     public static void printMenu(){
         System.out.println("Enter number from the list to perform following action:");
@@ -60,7 +58,6 @@ public class Main {
         }
         while (!choice.equals("0"));
     }
-
     public static String getUserChoice() throws IOException{
         BufferedReader reader = FileManager.initReader();
         return reader.readLine();

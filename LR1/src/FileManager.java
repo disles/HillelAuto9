@@ -86,7 +86,6 @@ public class FileManager {
             System.out.println(fileSrc + " hasn't been renamed");
         }
     }
-
     public static void findWords(String filePath, String word) throws IOException{
         if (filePath == ""|| word == ""){
             System.out.println("Please enter file to search words in");
