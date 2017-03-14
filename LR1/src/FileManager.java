@@ -168,11 +168,8 @@ public class FileManager {
         return (Arrays.asList(allowedCommands).contains(command));
     }
     public static void showFilePathTip(){
-        if (isMac()){
-            System.out.println("Enter FilePath in following format /Users/username/Documents/file.txt");
-        }
-        else if (isUnix()) {
-            System.out.println("Enter FilePath in following format /home/username/Documents/file.txt");
+        if (isMac() || isUnix()){
+            System.out.println("Enter FilePath in following format /Documents/file.txt");
         }
         else if (isWindows()){
             System.out.println("Enter FilePath in following format C:\\Users\\username\\Documents\\file.txt");

@@ -20,10 +20,10 @@ public class HillelFileWriter {
         boolean exists = exists(file);
 
         if (exists) {
-            System.out.println("Файл " + fileName + " существует, начинаю запись данных...");
+            System.out.println("File " + fileName + " exists, writing data...");
             writeToFile(file, content);
         } else {
-            System.out.println("Файл " + fileName + " не существует...Создать его? (y/n)");
+            System.out.println("File " + fileName + " Doesn't exist, create it? (y/n)");
             String userInput = scanner.nextLine();
             if ("y".equals(userInput)) { //добавить возможность принимать ответ без учета регистра
                 try {
@@ -33,12 +33,11 @@ public class HillelFileWriter {
                     e.printStackTrace();
                 }
             } else if ("n".equals(userInput)) {
-                System.out.println("Ваш ответ 'нет', файл не будет создан. Пока!");
+                System.out.println("Your answer is 'No', File won't be created. Bye!");
             }
         }
         return "Done!";
     }
-
     private boolean exists(File file) {
         if (file.exists()) {
             return true;
@@ -46,8 +45,6 @@ public class HillelFileWriter {
             return false;
         }
     }
-
-
     private void writeToFile(File file, String content) {
         try {
             fw = new FileWriter(file.getAbsoluteFile());
